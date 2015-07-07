@@ -8,8 +8,8 @@ Use arrow keys to move ( Top - Left - Right - Bottom ) and try to reach the wate
 Try to collect the gems in your way
 There is three types of gems with diffrent score
 
-Blue Gem : 100 Points
-Green Gem : 200 Points
-Orange Gem : 300 Points
+* Blue Gem : 100 Points
+* Green Gem : 200 Points
+* Orange Gem : 300 Points
 
 Hiting a bug will return you back to the start point
