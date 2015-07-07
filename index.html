@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Effective JavaScript: Frogger</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+
+    <!-- Add player score -->
+    <div class="player-wins">
+        Win Stroke :
+        <strong id="playerScore">0</strong>
+    </div>
+    <div class="player-score">
+        Score :
+        <strong id="playerGemScore">0</strong>
+    </div>
+
+    <div id="moveError"></div>
+
     <script src="js/resources.js"></script>
     <script src="js/app.js"></script>
     <script src="js/engine.js"></script>
 </body>
+
 </html>
