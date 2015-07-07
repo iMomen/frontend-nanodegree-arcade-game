@@ -51,8 +51,8 @@ Enemy.prototype.randomSpeed = function () {
 // Player
 var PLAYER_X = 200,
     PLAYER_Y = 400,
-    PLAYER_SCORE = 0,
-    PLAYER_GEM_SCORE = 0;
+    playerScore = 0,
+    playerGemScore = 0;
 
 var Player = function () {
     this.sprite = 'images/char-cat-girl.png';
@@ -92,8 +92,8 @@ Player.prototype.handleInput = function (playerMove) {
     case 'up':
         if (this.y === 40) {
             this.resetPlayer();
-            PLAYER_SCORE++;
-            document.getElementById('playerScore').innerHTML = PLAYER_SCORE;
+            playerScore++;
+            document.getElementById('playerScore').innerHTML = playerScore;
             return !validMove;
         }
         this.y -= yDirectionMove;
@@ -154,8 +154,8 @@ Gem.prototype.update = function () {
         gemYRight = this.y + 65.5;
 
     if (player.x > gemXLeft && player.x < gemXRight && player.y > gemYLeft && player.y < gemYRight) {
-        PLAYER_GEM_SCORE = PLAYER_GEM_SCORE + this.value;
-        document.getElementById('playerGemScore').innerHTML = PLAYER_GEM_SCORE;
+        playerGemScore = playerGemScore + this.value;
+        document.getElementById('playerGemScore').innerHTML = playerGemScore;
         this.reCreateGem();
     }
 };
