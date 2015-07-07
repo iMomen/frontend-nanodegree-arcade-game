@@ -10,7 +10,7 @@ var Enemy = function (enemyX, enemyY, enemySpeed) {
     this.x = enemyX;
     this.y = enemyY;
     this.speed = enemySpeed;
-}
+};
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -33,40 +33,40 @@ Enemy.prototype.update = function (dt) {
         player.resetPlayer();
     }
 
-}
+};
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 Enemy.prototype.randomSpeed = function () {
     var speedMultiply = Math.floor(Math.random() * 5 + 1);
     this.speed = 75 * speedMultiply;
-}
+};
 
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
 // Player
-var playerX = 200,
-    playerY = 400,
-    playerScore = 0,
-    playerGemScore = 0;
+var PLAYER_X = 200,
+    PLAYER_Y = 400,
+    PLAYER_SCORE = 0,
+    PLAYER_GEM_SCORE = 0;
 
 var Player = function () {
     this.sprite = 'images/char-cat-girl.png';
 
-    this.x = playerX;
-    this.y = playerY;
+    this.x = PLAYER_X;
+    this.y = PLAYER_Y;
 
-}
+};
 
 Player.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
-Player.prototype.update = function () {}
+Player.prototype.update = function () {};
 
 Player.prototype.handleInput = function (playerMove) {
 
@@ -92,8 +92,8 @@ Player.prototype.handleInput = function (playerMove) {
     case 'up':
         if (this.y === 40) {
             this.resetPlayer();
-            playerScore++;
-            document.getElementById('playerScore').innerHTML = playerScore;
+            PLAYER_SCORE++;
+            document.getElementById('playerScore').innerHTML = PLAYER_SCORE;
             return !validMove;
         }
         this.y -= yDirectionMove;
@@ -110,11 +110,12 @@ Player.prototype.handleInput = function (playerMove) {
         return !validMove;
     }
 
-}
+};
+
 Player.prototype.resetPlayer = function () {
-    this.x = playerX;
-    this.y = playerY;
-}
+    this.x = PLAYER_X;
+    this.y = PLAYER_Y;
+};
 
 // GEMS
 // Colors
@@ -139,11 +140,11 @@ var Gem = function (gemX, gemY, gemValue, gemColor) {
     this.y = gemY;
     this.value = gemValue;
 
-}
+};
 
 Gem.prototype.render = function () {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 Gem.prototype.update = function () {
 
@@ -153,11 +154,11 @@ Gem.prototype.update = function () {
         gemYRight = this.y + 65.5;
 
     if (player.x > gemXLeft && player.x < gemXRight && player.y > gemYLeft && player.y < gemYRight) {
-        playerGemScore = playerGemScore + this.value;
-        document.getElementById('playerGemScore').innerHTML = playerGemScore;
+        PLAYER_GEM_SCORE = PLAYER_GEM_SCORE + this.value;
+        document.getElementById('playerGemScore').innerHTML = PLAYER_GEM_SCORE;
         this.reCreateGem();
     }
-}
+};
 
 Gem.prototype.reCreateGem = function () {
     var gemXPosition = Math.floor(Math.random() * (4)) + 0;
@@ -165,7 +166,7 @@ Gem.prototype.reCreateGem = function () {
     
     var gemYPosition = Math.floor(Math.random() * (2)) + 0;
     this.y = gemYPositionArray[gemYPosition];
-}
+};
 
 
 // Now instantiate your objects.

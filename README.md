@@ -1,6 +1,15 @@
 frontend-nanodegree-arcade-game
 ===============================
 
-Students should use this rubric: https://www.udacity.com/course/viewer#!/c-ud015/l-3072058665/m-3072588797
+#Udacity Arcade Game
+How to play : 
+Open index.html file
+Use arrow keys to move ( Top - Left - Right - Bottom ) and try to reach the water side without hiting a bug
+Try to collect the gems in your way
+There is three types of gems with diffrent score
 
-for self-checking their submission.
+Blue Gem : 100 Points
+Green Gem : 200 Points
+Orange Gem : 300 Points
+
+Hiting a bug will return you back to the start point
